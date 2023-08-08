@@ -486,7 +486,7 @@ year_list, region, api_key):
         for i in range(2, data_column_count+1):
             df_data_across_years[df_data_across_years.columns[
             i-1][-1:-5:-1][::-1]+'_to_'+df_data_across_years.columns[
-            i][-1:-5:-1][::-1]+'_chg'] = (df_data_across_years[
+            i][-1:-5:-1][::-1]+f'_{variable_name}_chg'] = (df_data_across_years[
             df_data_across_years.columns[i]] / df_data_across_years[
                 df_data_across_years.columns[i-1]])-1
 
@@ -504,7 +504,7 @@ year_list, region, api_key):
         if len(df_data_across_years.columns) > 3:
             df_data_across_years[df_data_across_years.columns[
             1][-1:-5:-1][::-1]+'_to_'+df_data_across_years.columns[
-                data_column_count][-1:-5:-1][::-1]+'_chg'] = (
+                data_column_count][-1:-5:-1][::-1]+f'_{variable_name}_chg'] = (
                     df_data_across_years[df_data_across_years.columns[
                 data_column_count]] / df_data_across_years[
             df_data_across_years.columns[1]])-1
